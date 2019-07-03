@@ -11,6 +11,10 @@
     <title>This is my First web</title>
   </head>
   <body>
-hello world
+  <form action="b">
+    姓名：<input type="text" name="username" ><br>
+    密码：<input type="text" name="password" ><br>
+    <input type="submit" value="登錄">
+  </form>
   </body>
 </html>

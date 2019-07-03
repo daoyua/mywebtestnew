@@ -17,7 +17,7 @@
         <url-pattern>/a</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>LoginHttp</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.test.server.LoginServlet</servlet-class>
         <init-param>
             <param-name>number</param-name>
@@ -26,7 +26,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoginHttp</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/b</url-pattern>
     </servlet-mapping>
 </web-app>

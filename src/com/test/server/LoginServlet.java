@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.Properties;
 
 public class LoginServlet extends HttpServlet {
@@ -32,6 +33,26 @@ public class LoginServlet extends HttpServlet {
         String name = properties.getProperty("name");
         System.out.println("name="+name);
 //        servletConfig.getServletName()
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        PrintWriter writer = resp.getWriter();
+        Object count = getServletContext().getAttribute("count");
+        int counts=0;
+        if(count!=null){
+            counts= (int) count+1;
+        }
+        if("admin".equals(username)){
+            writer.write("成功登錄"+counts);
+            System.out.println("count"+counts);
+            resp.setStatus(302);
+            resp.setHeader("Location","success.html");
+//            System.out.println("count"+counts);
+            getServletContext().setAttribute("count",counts);
+        }else{
+            writer.write("login failed!");
+        }
+//        writer.write(username);
+//        writer.write(password);
     }
 
     @Override
