@@ -53,6 +53,8 @@ public class LoginServlet extends HttpServlet {
         }
 //        writer.write(username);
 //        writer.write(password);
+        //****************************************************
+        req.getParameter("name");
     }
 
     @Override
