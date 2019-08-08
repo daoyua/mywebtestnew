@@ -17,10 +17,17 @@ public class CookieServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+//        request.getParameter("username")
+
         //相应cookie
         response.setContentType("text/html ; charset =UTF-8");
-        Cookie cookie = new Cookie("aa", "bb");
+        Cookie cookie = new Cookie("name", "zhangshan");
+        cookie.setMaxAge(-1);
+        cookie.setDomain("ithei.com");
         response.addCookie(cookie);
+
+        Cookie cookie2 = new Cookie("age", "12");
+        response.addCookie(cookie2);
         response.getWriter().write("请求成功了");
 
 
@@ -31,10 +38,10 @@ public class CookieServlet extends HttpServlet {
 
                 String name = c.getName();
                 String value = c.getValue();
-                System.out.println(name+":"+value);
+                System.out.println(name + ":" + value);
             }
         }
-
+//有效期 ，默认关闭浏览器没有
 
     }
 }
