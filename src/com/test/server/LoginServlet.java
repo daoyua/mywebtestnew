@@ -53,11 +53,10 @@ public class LoginServlet extends HttpServlet {
                 //第二次
                 long value = Long.parseLong(lastCookie.getValue());
                 writer.write("欢迎" + username+"上次来访时间:"+new Date(value));
-                lastCookie.setValue(System.currentTimeMillis() + "");
+                lastCookie.setValue(System.currentTimeMillis()  + "");
                 resp.addCookie(lastCookie);
             } else {//没有cookie 第一次
-                lastCookie = new Cookie("last", System.currentTimeMillis() + "");
-                lastCookie.setMaxAge(60 * 60 * 24);
+                lastCookie = new Cookie("last", System.currentTimeMillis() + "");                lastCookie.setMaxAge(60 * 60 * 24);
                 resp.addCookie(lastCookie);
                 writer.write("欢迎" + username);
             }
