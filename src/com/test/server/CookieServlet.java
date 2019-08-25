@@ -27,6 +27,7 @@ public class CookieServlet extends HttpServlet {
         response.addCookie(cookie);
 
         Cookie cookie2 = new Cookie("age", "12");
+        cookie2.setPath("/c");
         response.addCookie(cookie2);
         response.getWriter().write("请求成功了");
 
