@@ -48,10 +48,15 @@ a的时间是多久
     pageContext.setAttribute("lis",list);
 %>
 <%--只能输出一个值--%>
+<%--${--%>
+        <%--u.a--%>
+<%--}--%>
+<%--el表达式内置对象pageScope,sessionScope,applicationScope,requestScope,pageContext,header,headerValues,param,paramValues,--%>
+<%--cookie,initParam--%>
 ${
         pageScope.name;
-sessionScope.clear();
-requestScope.clear();
+        sessionScope.clear();
+        requestScope.clear();
         applicationScope.name;
        lis[1]
         }
@@ -64,5 +69,6 @@ aaa[0]
 ${
         aaa[2]
         }
+
 </body>
 </html>
