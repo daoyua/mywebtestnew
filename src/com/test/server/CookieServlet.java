@@ -42,6 +42,9 @@ public class CookieServlet extends HttpServlet {
                 System.out.println(name + ":" + value);
             }
         }
+        String aa="hah";
+        String bb="hah";
+        System.out.println(aa==bb);
 //有效期 ，默认关闭浏览器没有
 
     }

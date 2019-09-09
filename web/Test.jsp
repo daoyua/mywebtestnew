@@ -6,12 +6,29 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="index.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"
+
+%>
 
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+<%--jstl demo********************************--%>
+<%--存储一个值到作用于--%>
+<c:set var="age" value="19" scope="session"></c:set>
+${sessionScope.age}
+<%--判断--%>
+<c:if test="${age>18}">
+    年龄大于了16岁
+</c:if>
+<%--遍历--%>
+<c:forEach begin="1" end="10" var="i" step="2"  >
+${
+i
+}
+</c:forEach>
 a的时间是多久
 <%--<jsp:include page="other.jsp"></jsp:include>--%>
 <%--<jsp:param name="" value=""></jsp:param>--%>
@@ -46,6 +63,9 @@ a的时间是多久
     list.add("a4");
     list.add("a5");
     pageContext.setAttribute("lis",list);
+
+
+//    System.out.println(aa==bb);
 %>
 <%--只能输出一个值--%>
 <%--${--%>

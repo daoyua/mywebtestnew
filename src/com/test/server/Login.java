@@ -1,32 +1,29 @@
 package com.test.server;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Login implements Servlet {
+/**
+ * 测试jasp的servlet
+ */
+public class Login extends HttpServlet {
     @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
-
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset=UTF-8");
+        String usernmae = req.getParameter("username");
+        String password = req.getParameter("password");
+        System.out.println(usernmae+password);
+        resp.getWriter().write(usernmae+password);
     }
 
     @Override
-    public ServletConfig getServletConfig() {
-        return null;
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 
-    @Override
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-System.out.println("呵呵呵呵呵呵呵呵呵呵呵");
 
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public void destroy() {
-
-    }
 }
